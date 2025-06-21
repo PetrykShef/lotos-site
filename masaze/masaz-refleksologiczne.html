@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masaż relaksacyjny - LOTOS UA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #fdf8f1;
+      color: #2a2a2a;
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      color: white;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('../img/refleksologiczne.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5b3921;
+    }
+
+    .section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .section a {
+      color: #2a2a2a;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .massage-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .massage-box img {
+      width: 300px;
+      border-radius: 8px;
+    }
+
+    .massage-box h4 {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .btn-group {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-group button {
+      background-color: #7d4f34;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .btn-group button:hover {
+      background-color: #5c3926;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 80vh;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .massage-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .massage-box img {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fdf8f1;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 99;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #2a2a2a;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1e0cc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+footer iframe {
+  width: 100%;
+  max-width: 300px; /* було 400px */
+  height: 150px;     /* було 250px */
+  border-radius: 12px;
+  border: none;
+  margin-top: 10px;  /* щоб не прилипала до заголовка */
+
+}
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+<script src="/js/include.js" defer></script>
+</head>
+<body>
+
+
+    
+
+  <section class="hero">
+    <h1>Masaż  refleksologiczny dłoni</h1>
+  </section>
+
+  <section class="section">
+    <h2>Masaż  refleksologiczny dłoni</h2>
+    <p> 
+Podaruj swoim dłoniom masaż refleksologiczny, który odpręży ciało i umysł, jednocześnie stymulując funkcjonowanie wewnętrznych narządów i poszczególnych części ciała. Delikatny, precyzyjny dotyk masażysty na specjalnych punktach na dłoniach pobudzi energię w całym ciele, łagodząc bóle, napięcia oraz stres. To nie tylko pielęgnacja dłoni, ale także zabieg przywracający równowagę Twojego organizmu, który poprawia krążenie i wspiera pracę układu odpornościowego. Wystarczy chwila, by poczuć ulgę i głęboki relaks. Daj swoim dłoniom zasłużoną uwagę. 
+
+<p>Masaż realizowany dopiero od 3 do 8 miesiąca ciąży, jego rozpoczęcie powinno być poprzedzone konsultacją z lekarzem prowadzącym ciążę.
+</p>
+        <a href="masaz-refleksologiczne-info.html">Dowiedz się więcej</a>
+
+    <div class="massage-box">
+        <div>
+            <img src="../img/refleksologiczne.jpg" alt="Masaż  refleksologiczny dłoni">
+        </div>
+        <div>
+  <a href="../cennik.html">obejrzeć cenę</a>
+  <div class="btn-group" style="display: flex; gap: 20px; margin-top: 15px;">
+    <a href="../payment.html" style="text-decoration: none;">
+      <button style="background-color: #7b4c30; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+        rezerwuj wizytę
+      </button>
+    </a>
+    <a href="../vouchery.html" style="text-decoration: none;">
+      <button style="background-color: #7b4c30; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+        kup voucher
+      </button>
+    </a>
+    <a href="../promocje.html" style="text-decoration: none;">
+      <button style="background-color: #7b4c30; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+        skorzystaj z promocji
+      </button>
+    </a>
+  </div>
+</div>
+
+        </div>
+    </section>
+    
+
+
+</body>
+</html>
