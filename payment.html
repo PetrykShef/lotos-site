@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezerwacja masażu</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fffaf2;
+      margin: 0;
+      padding: 0;
+      color: #2a2a2a;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 60px auto;
+      background: #fdf4e3;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #5b3921;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 1em;
+      font-family: Georgia, serif;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background-color: #7d4f34;
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 10px;
+      font-size: 1.1em;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #5c3926;
+    }
+
+ 
+    select {
+      appearance: none;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23666"><path d="M4 6l4 4 4-4z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 12px;
+      background-color: #fff; /* ← змінено на білий */
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+      color: #3e2d23;
+    }
+
+    
+
+    select:focus {
+      border-color: #b57b51;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(181, 123, 81, 0.2);
+    }
+
+    optgroup {
+      font-weight: bold;
+      background-color: #eaeaea;
+      color: #5c3b26;
+    }
+
+    option {
+      padding: 8px 12px;
+      background-color: #ffffff;
+      color: #3e2d23;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+<script src="/js/include.js" defer></script>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Umów się na masaż</h2>
+    <form action="https://formspree.io/f/xzzgapjq" method="POST">
+
+      <label for="massage-category">Rodzaj masażu:</label>
+      <select id="massage-category" required>
+        <option value="">-- Wybierz kategorię --</option>
+        <option value="relaksacyjne">Masaże o działaniu relaksacyjno-antystresowym</option>
+        <option value="terapeutyczne">Masaże terapeutyczne o działaniu leczniczo-zdrowotnym</option>
+        <option value="modelujace">Masaże modelujące o działaniu wyszczuplająco-antycellulitowym</option>
+        <option value="twarzy">Masaże twarzy o działaniu odmładzająco-liftingującym</option>
+        <option value="kosmetyczne">Zabiegi kosmetyczne na twarz i ciało</option>
+        <option value="taping">Taping</option>
+      </select>
+
+      <label for="massage-type">Wybierz masaż:</label>
+      <select id="massage-type" name="Rodzaj masażu" required disabled>
+        <option value="">-- Najpierw wybierz kategorię --</option>
+      </select>
+
+      <label for="date">Preferowana data:</label>
+      <input type="date" id="date" name="Data" required>
+
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="Imię i nazwisko" required>
+
+      <label for="phone">Numer telefonu:</label>
+      <input type="tel" id="phone" name="Telefon" required>
+
+      <label for="message">Dodatkowe informacje:</label>
+      <textarea id="message" name="Wiadomość" rows="4" placeholder="Godzina, preferencje, życzenia..."></textarea>
+
+      <!-- Formspree hidden -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/promocje.html">
+
+      <button type="submit">Wyślij zgłoszenie</button>
+    </form>
+  </div>
+
+  <script>
+    const subOptions = {
+      relaksacyjne: [
+        "Masaż relaksacyjny",
+        "Masaż gorącymi kamieniami",
+        "Masaż stemplami ziołowymi",
+        "Masaż świecą aromatyczną",
+        "Masaż Lomi Lomi Nui",
+        "Masaż masłem SHEA",
+        "Masaż głowy",
+        "Masaż prenatalny"
+      ],
+      terapeutyczne: [
+        "Masaż klasyczny",
+        "Masaż punktowy",
+        "Masaż limfatyczny",
+        "Masaż sportowy",
+        "Masaż poporodowy",
+        "Masaż stawowy"
+      ],
+      modelujace: [
+        "Masaż wyszczuplający",
+        "Masaż bańką chińską",
+        "Masaż miodowy"
+      ],
+      twarzy: [
+        "Masaż Kobido",
+        "Masaż liftingujący",
+        "Refleksologiczny masaż twarzy"
+      ],
+      kosmetyczne: [
+        "Zabieg na twarz",
+        "Zabieg na ciało",
+        "Peeling + maseczka"
+      ],
+      taping: [
+        "Taping terapeutyczny",
+        "Taping estetyczny"
+      ]
+    };
+
+    const categorySelect = document.getElementById("massage-category");
+    const typeSelect = document.getElementById("massage-type");
+
+    categorySelect.addEventListener("change", function () {
+      const selectedCategory = this.value;
+      typeSelect.innerHTML = '<option value="">-- Wybierz masaż --</option>';
+
+      if (subOptions[selectedCategory]) {
+        subOptions[selectedCategory].forEach(massage => {
+          const option = document.createElement("option");
+          option.value = massage.toLowerCase().replace(/\s+/g, "-");
+          option.textContent = massage;
+          typeSelect.appendChild(option);
+        });
+        typeSelect.disabled = false;
+      } else {
+        typeSelect.disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>

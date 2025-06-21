@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezerwacja masażu</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fffaf2;
+      margin: 0;
+      padding: 20px;
+      color: #2a2a2a;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff5eb;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .form-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #5b3921;
+      margin-bottom: 30px;
+      font-size: 2.2em;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #4a2d1f;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      border: 1px solid #d4bfa7;
+      background: #fff;
+      font-size: 1em;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.04);
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #a06a47;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button[type="submit"] {
+      background-color: #7d4f34;
+      color: #fff;
+      border: none;
+      padding: 16px 50px;
+      border-radius: 12px;
+      font-size: 1.1em;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #5c3926;
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+<script src="/js/include.js" defer></script>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Запис на масаж</h2>
+
+    <form action="https://formsubmit.co/petroschevc@gmail.com" method="POST">
+
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Numer telefonu:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="massageType">Rodzaj masażu:</label>
+      <select name="massageType" id="massageType" required>
+        <option value="">-- Wybierz masaż --</option>
+
+        <optgroup label="Masaże o działaniu relaksacyjno-antystresowym">
+          <option value="relaksacyjny">Masaż relaksacyjny</option>
+          <option value="goracymi-kamieniami">Masaż gorącymi kamieniami</option>
+          <option value="ziolowe-stemple">Masaż stemplami ziołowymi</option>
+          <option value="aromatyczna-swieca">Masaż świecą aromatyczną</option>
+          <option value="lomi-lomi-nui">Masaż Lomi Lomi Nui</option>
+          <option value="shea">Masaż masłem SHEA</option>
+          <option value="glowy">Masaż głowy</option>
+          <option value="prenatalny">Masaż prenatalny</option>
+        </optgroup>
+
+        <optgroup label="Masaże terapeutyczne o działaniu leczniczo-zdrowotnym">
+          <option value="klasyczny">Masaż klasyczny</option>
+          <option value="punktowy">Masaż punktowy</option>
+          <option value="limfatyczny">Masaż limfatyczny</option>
+          <option value="sportowy">Masaż sportowy</option>
+          <option value="poporodowy">Masaż poporodowy</option>
+          <option value="stawowy">Masaż stawowy</option>
+        </optgroup>
+
+        <optgroup label="Masaże modelujące">
+          <option value="wyszczuplajacy">Masaż wyszczuplający</option>
+          <option value="bankami-chinskimi">Masaż bańką chińską</option>
+          <option value="miodowy">Masaż miodowy</option>
+        </optgroup>
+
+        <optgroup label="Masaże twarzy">
+          <option value="kobido">Masaż twarzy Kobido</option>
+          <option value="face-taping">Face Taping</option>
+          <option value="refleksologiczny">Masaż refleksologiczny dłoni i stóp</option>
+        </optgroup>
+      </select>
+
+      <label for="date">Preferowana data:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="message">Dodatkowe informacje:</label>
+      <textarea id="message" name="message" placeholder="Наприклад: бажаю масаж ввечері, після 18:00..."></textarea>
+
+      <button type="submit">Wyślij zgłoszenie</button>
+
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/dziekujemy.html">
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </div>
+
+</body>
+</html>

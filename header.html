@@ -1,0 +1,101 @@
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 250, 242, 0.1); /* напівпрозорий фон одразу */
+    backdrop-filter: blur(4px); /* легкий блюр */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    font-family: Georgia, serif;
+  }
+
+  header.scrolled {
+    background-color: rgba(255, 250, 242, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #5b3921;
+    font-weight: 600;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fffaf2;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: #5b3921;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f3e1ca;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown > a::after {
+    content: " ▾";
+    font-size: 0.8em;
+  }
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
+<header id="site-header">
+  <div style="display: flex; align-items: center; font-size: 1.5em; font-weight: bold; color: #ffeb3b;">
+    <img src="../img/logo.png" alt="Logo" style="height: 60px; margin-right: 10px;" />
+    LOTOS UA
+  </div>
+  <nav>
+    <a href="../index.html">o nas</a>
+    <div class="dropdown">
+      <a href="../oferta.html">oferta</a>
+      <div class="dropdown-content">
+        <a href="../masaze/relaksacyjno-antystresowym.html">Masaże relaksacyjne</a>
+        <a href="../masaze/terapeutyczne.html">Masaże terapeutyczne</a>
+        <a href="../masaze/modelujace.html">Masaże modelujące</a>
+        <a href="../masaze/twarz.html">Masaże twarzy</a>
+        <a href="../masaze/kosmetyczne.html">Zabiegi kosmetyczne</a>
+        <a href="../masaze/taping.html">Taping</a>
+      </div>
+    </div>
+    <a href="../cennik.html">cennik</a>
+    <a href="../promocje.html">promocje</a>
+    <a href="../vouchery.html">vouchery</a>
+    <a href="../kontakt.html">kontakty</a>
+  </nav>
+</header>
